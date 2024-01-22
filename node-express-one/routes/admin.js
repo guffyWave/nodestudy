@@ -28,4 +28,26 @@ router.get('/', (req, res, next) => {
 //router.post('/add-animal' Both  can have same routes as methods are different
 //router.get('/add-animal'
 
+router.get('/testhandlebar', (req, res, next) => {
+    //Not sure why main.handlebars is being rendered and not myFile.handlebar
+    res.render('myFile.handlebars', {
+        title: 'Express Handlebars Example',
+        message: 'Hello, Gufran  Handlebars!',
+    });
+});
+
+router.get('/testejs', (req, res, next) => {
+    res.render('test-ejs', {
+        pageTitle: 'Express EJS Example',
+        message: 'Hello, Gufran  EJS !',
+    });
+});
+
+router.get('/test-partial-ejs', (req, res, next) => {
+    res.render('partial-test', {
+        pageTitle: 'Express  Partial EJS Example',
+        message: 'Hello, Partial Gufran  EJS !',
+    });
+});
+
 module.exports = router;
